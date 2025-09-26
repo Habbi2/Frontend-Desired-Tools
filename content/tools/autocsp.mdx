@@ -1,0 +1,33 @@
+---
+id: autocsp
+name: AutoCSP
+tagline: Generate baseline & strict Content-Security-Policies with inline hash support.
+category: security
+status: stable
+repo: https://github.com/Habbi2/AutoCPS
+demo: https://auto-cps.vercel.app
+tech: ["Next.js", "TypeScript", "Tailwind"]
+features:
+  - Baseline & strict CSP generation
+  - Inline script & style hashing (SHA-256)
+  - Risk scoring & issue detection
+  - Multi-page crawl & runtime discovery (optional)
+  - Directive diffs & origin summaries
+  - Export snippets (Helmet, nginx, Apache, Cloudflare)
+license: MIT
+added: 2025-09-01
+updated: 2025-09-26
+---
+
+AutoCSP ingests a live URL, crawls optionally, fingerprints inline code, and produces both **baseline** and **strict** CSP variants. It highlights risky constructs (wildcards, `unsafe-inline`, missing script hashing) and provides ready-to-paste server / meta / proxy snippets.
+
+### Why it exists
+Manually crafting strong CSPs is tedious. AutoCSP reduces iteration time and surfaces tightening opportunities early.
+
+### Core Ideas
+- Non-destructive baseline + a harder strict candidate
+- Hash-first mindset instead of allowing inline everywhere
+- Risk heuristics to motivate incremental tightening
+
+### Quick Start
+Enter a URL, review baseline vs strict, copy the snippet you prefer, iterate.

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark-only theme */
+:root { color-scheme: dark; }
+body { font-family: ui-sans-serif, system-ui, sans-serif; line-height: 1.45; -webkit-font-smoothing: antialiased; background:#0d1117; color:#d1d5db; }
+
+/* Accessibility */
+:focus-visible { outline: 2px solid #6366f1; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce){ * { animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; } }
+
+/* Minimal utility-esque custom classes (avoid extensive @apply to keep lint happy) */
+.badge { display:inline-flex; align-items:center; border-radius:6px; padding:2px 6px; font-size:11px; font-weight:500; background:#1f2937; color:#d1d5db; text-transform:uppercase; letter-spacing:.5px; }
+.badge.brand { background:#4f46e5; color:#fff; }
+
+.prose h1 { font-size:1.875rem; font-weight:700; line-height:1.15; }
+@media (min-width:768px){ .prose h1 { font-size:2.25rem; } }
