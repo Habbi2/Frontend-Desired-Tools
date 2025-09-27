@@ -1,0 +1,66 @@
+---
+id: automatic-og-generator
+name: Automatic OG Generator
+tagline: Composite live webpage snapshots with branded overlay for social preview images.
+category: media
+status: experimental
+repo: https://github.com/Habbi2/Automatic-OG-Generator
+demo: https://automatic-og-generator.vercel.app
+tech: ["Next.js", "TypeScript", "Puppeteer", "Tailwind"]
+features:
+  - Puppeteer capture endpoint with delay & static/live modes
+  - Branded overlay layout (title, subtitle, gradient accent bar)
+  - Auto-scaling iframe snapshot region (base width transform)
+  - Adaptive title auto-fit (binary search font sizing)
+  - Query parameters for theme, sizing, padding, borders, shadows
+  - Optional element hiding & custom CSS injection
+  - Dev overlay suppression toggle (hidedev)
+license: MIT
+added: 2025-09-26
+updated: 2025-09-26
+---
+
+Automatic OG Generator produces consistent, high-quality Open Graph style images by screenshotting a target URL inside a controlled overlay frame. Titles and supporting subtitles are rendered beside (or above on narrow widths) the live or static snapshot.
+
+### Capture Flow
+1. Request `/api/capture?url=...` with width/height and optional `overlay=1`.
+2. Service navigates headless Chromium (Puppeteer) to the target, applies delay if specified.
+3. If `overlay=1`, it loads the `/overlay` route embedding the target site via iframe and captures the composed result.
+4. PNG is streamed back.
+
+### Core Parameters (Overlay Route)
+- `url`: Target webpage (required for live mode)
+- `title`: Primary heading text
+- `subtitle`: Optional supporting line
+- `theme`: `dark` (default) | `light`
+- `w`, `h`: Output dimensions (defaults 1200x630)
+- `accent`: Two comma-separated colors for gradient (fallback to first if second missing)
+- `pad`: CSS padding shorthand (capped length, defaults `40px 56px 40px 88px`)
+- `autosize=1`: Enable adaptive title sizing
+- `noborder=1`: Remove inner snapshot border
+- `noshadow=1`: Remove card shadow
+- `hidedev=0`: Show Next.js dev overlays (hidden by default)
+- `inject`: Custom CSS (sanitized to block @import)
+- `hide`: Comma-separated selectors to force `display:none`
+- `mode=static`: Use provided static `url` if it is a data URL image instead of iframe
+
+### Example
+```
+/overlay?url=https://example.com&title=Launch+Preview&subtitle=Fast+iteration+ahead&accent=%236366f1,%238b5cf6&autosize=1&theme=dark
+```
+
+### Auto-Fit Title
+A tiny client component measures and shrinks the title font size via binary search so long strings wrap into at most three lines while preserving maximum legibility.
+
+### Iframe Scaling
+The snapshot iframe renders at a fixed internal base width (390px) then scales up proportionally with CSS transforms to fill the available mask, ensuring predictable typography proportions across varying output widths.
+
+### Roadmap Ideas
+- Plain theme (ultra-minimal, no gradients / shadows)
+- Max scale + custom base width query parameters
+- Multi-frame storyboard (sequential states)
+- Font selection parameter
+
+### Why It Exists
+Manually curating OG images slows iteration. This tool lets you generate on-brand visual previews from real pages (or static renders) with negligible manual design overhead.
+
