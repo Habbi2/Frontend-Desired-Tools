@@ -1,6 +1,13 @@
-# Frontend Desired Tools Portal
+<p align="center">
+	<strong>Frontend Desired Tools Portal</strong><br/>
+	Curated micro devtools: security · UX · performance – fast to open, zero onboarding.
+</p>
 
-A hub that showcases a curated set of frontend / web performance & security utilities (your tools collection). Each tool entry is authored in MDX with structured frontmatter and rendered through a searchable filterable UI.
+> Live: https://frontend-desired-tools.vercel.app
+
+![Stars](https://img.shields.io/github/stars/Habbi2/Frontend-Desired-Tools?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square) ![Status](https://img.shields.io/badge/OG-images-planned-yellow?style=flat-square)
+
+The portal showcases a curated set of small, sharp frontend / web performance & security utilities. Each tool entry is authored in MDX with structured frontmatter and rendered through a searchable, filterable UI.
 
 ## Features
 - MDX powered content with typed meta frontmatter
@@ -69,3 +76,6 @@ Implemented via `app/sitemap.ts` and enumerates:
 
 ## License
 Covering portal code: MIT (adjust if needed). Individual tools may have their own licenses—always check those repos.
+
+## Social / OG Image Plan
+Planned dynamic OG generation for each tool: large title + tagline + category pill + minimal screenshot strip. Fallback static `/public/og/<id>.png` if dynamic route fails.
