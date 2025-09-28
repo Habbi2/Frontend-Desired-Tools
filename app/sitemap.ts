@@ -2,7 +2,7 @@ import { getAllTools, type ToolMeta } from "../lib/tools";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://frontend-desired-tools.example";
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://frontend-tools.site/";
   const tools: ToolMeta[] = await getAllTools();
   const now = new Date().toISOString();
 

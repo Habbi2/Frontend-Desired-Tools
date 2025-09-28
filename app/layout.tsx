@@ -27,6 +27,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="h-full dark">
       <body className="min-h-screen flex flex-col bg-neutral-950 text-neutral-200">
+        {/* JSON-LD: Organization */}
+        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Organization',
+          name: 'Frontend Desired Tools',
+          url: (process as any).env.SITE_URL || 'https://frontend-tools.site',
+          sameAs: [
+            'https://github.com/Habbi2'
+          ]
+        }) }} />
+        {/* JSON-LD: WebSite + SearchAction */}
+        <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Frontend Desired Tools',
+          url: (process as any).env.SITE_URL || 'https://frontend-tools.site'
+        }) }} />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 bg-brand-600 text-white px-4 py-2 rounded-md shadow">Skip to content</a>
   <header className="border-b border-neutral-800 bg-neutral-950/90">
           <div className="max-w-7xl mx-auto px-6 py-4 flex items-center gap-8">
