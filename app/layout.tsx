@@ -6,19 +6,19 @@ import React from 'react';
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.SITE_URL || 'https://frontend-tools.site'),
   title: 'Frontend Desired Tools',
-  description: 'Central hub for your frontend & security tooling projects.',
+  description: 'A hub for frontend and security tooling projects, offering simple tools to enhance your web development experience.',
   openGraph: {
     url: 'https://frontend-tools.site/',
     type: 'website',
     title: 'Frontend Desired Tools',
-    description: 'Central hub for your frontend & security tooling projects.',
+    description: 'A hub for frontend and security tooling projects, offering simple tools to enhance your web development experience.',
     images: [{ url: ogImage.src, width: ogImage.width, height: ogImage.height }]
   },
   twitter: {
     card: 'summary_large_image',
     site: 'https://frontend-tools.site/',
     title: 'Frontend Desired Tools',
-    description: 'Central hub for your frontend & security tooling projects.',
+    description: 'A hub for frontend and security tooling projects, offering simple tools to enhance your web development experience.',
     images: [ogImage.src]
   }
 };
