@@ -27,6 +27,13 @@ export async function generateMetadata({ params }: { params: Params }) {
 export default async function ToolPage({ params }: { params: Params }) {
   const tool = await getToolById(params.id);
   if (!tool) notFound();
+  const site = process.env.NEXT_PUBLIC_SITE_URL || 'https://frontend-tools.site';
+  const canonical = `${site}/tools/${tool.id}`;
+  const sameAs = [tool.repo, tool.demo, tool.npm && `https://www.npmjs.com/package/${tool.npm}`].filter(Boolean) as string[];
+  const licenseMap: Record<string, string> = {
+    MIT: 'https://opensource.org/license/mit/'
+  };
+  const license = (tool.license && licenseMap[tool.license]) || tool.license;
   return (
     <article className="prose dark:prose-invert max-w-3xl">
       <h1 className="mb-2 text-3xl font-bold tracking-tight">{tool.name}</h1>
@@ -41,6 +48,25 @@ export default async function ToolPage({ params }: { params: Params }) {
         {tool.demo && <a href={tool.demo} className="underline hover:text-brand-600" target="_blank" rel="noreferrer">Live Demo</a>}
         {tool.npm && <a href={`https://npmjs.com/package/${tool.npm}`} className="underline hover:text-brand-600" target="_blank" rel="noreferrer">NPM</a>}
       </div>
+      {/* JSON-LD: SoftwareApplication for this tool */}
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: tool.name,
+          applicationCategory: tool.category,
+          operatingSystem: 'Web',
+          description: tool.tagline,
+          url: canonical,
+          sameAs,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+          author: { '@type': 'Organization', name: 'Frontend Desired Tools', url: site },
+          publisher: { '@type': 'Organization', name: 'Frontend Desired Tools', url: site },
+          license: license
+        }) }}
+      />
       {tool.features?.length > 0 && <>
         <h2>Features</h2>
         <ul>{tool.features.map(f => <li key={f}>{f}</li>)}</ul>

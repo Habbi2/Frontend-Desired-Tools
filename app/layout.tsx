@@ -53,16 +53,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
             <nav className="flex items-center gap-6 text-sm ml-auto" aria-label="Primary">
               <a href="/about" className="hover:text-brand-400">About</a>
+              <a href="/changelog" className="hover:text-brand-400">Changelog</a>
               <a href="https://www.habbiwebdesign.site/" target="_blank" rel="noreferrer" className="hover:text-brand-400">Habbi Web Design ↗</a>
             </nav>
           </div>
         </header>
         <main id="main" className="flex-1 w-full max-w-7xl mx-auto px-6 md:px-8 py-10 space-y-10">{children}</main>
         <footer className="mt-auto border-t border-neutral-800 bg-neutral-950/90">
-          <div className="max-w-7xl mx-auto px-6 md:px-8 py-6 text-xs text-neutral-500 flex flex-wrap items-center gap-4">
-            <span>&copy; {new Date().getFullYear()} Frontend Desired Tools</span>
-            <a href="/about" className="hover:text-brand-400">About</a>
-            <a href="https://github.com/Habbi2" target="_blank" rel="noreferrer" className="hover:text-brand-400">GitHub ↗</a>
+          <div className="max-w-7xl mx-auto px-6 md:px-8 py-8 grid gap-4 md:grid-cols-3 items-center">
+            <div className="text-xs text-neutral-500 flex flex-wrap items-center gap-4">
+              <span>&copy; {new Date().getFullYear()} Frontend Desired Tools</span>
+              <a href="/about" className="hover:text-brand-400">About</a>
+              <a href="/changelog" className="hover:text-brand-400">Changelog</a>
+              <a href="https://github.com/Habbi2" target="_blank" rel="noreferrer" className="hover:text-brand-400">GitHub ↗</a>
+            </div>
           </div>
         </footer>
       </body>
