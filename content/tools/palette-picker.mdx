@@ -1,0 +1,42 @@
+---
+id: palette-picker
+name: Palette Picker
+tagline: Beginner-friendly palette playground that turns one color into an impressive, accessible UI palette.
+category: ux
+status: experimental
+repo: https://github.com/Habbi2/Frontend-Desired-Tools/tree/main/palette-picker
+demo: https://palette-picker-habbi.vercel.app/
+tech: ["HTML", "CSS", "JavaScript"]
+features:
+  - Vibe modes (Bold, Editorial, Neo Glass, Minimal, Playful, Elegant Dark)
+  - Primary-driven palette derivation (accent, neutrals, surface, text)
+  - AA contrast guardrails with gentle auto-fixes
+  - Light/Dark themes that adapt automatically
+  - Copy CSS variables, Tailwind snippet, and download tokens.json
+  - Shareable state via URL params
+license: MIT
+added: 2025-09-28
+updated: 2025-09-28
+---
+
+Palette Picker is a simple, no-URL playground for designers who just want impressive palettes fast. Pick a primary color, choose a "vibe" mode, and the tool generates a complete, contrast-safe palette with live component previews.
+
+### How it feels
+- You choose a color → palettes and components update instantly.
+- Modes encode design DNA (contrast, saturation curves, neutral temperature) so results look intentional.
+- Guardrails keep text readable; a "Make Accessible" action nudges values to AA.
+
+### What you get
+- CSS variables for `:root` and dark mode
+- A Tailwind theme snippet
+- `tokens.json` for design systems
+- A share link encoding your current state (primary, mode, mood, theme)
+
+### Try it locally
+- Open `palette-picker/index.html` in your browser.
+- Or serve the folder with any static server.
+
+### Roadmap
+- Logo color extraction (upload an image → suggested starters)
+- More modes (Industrial, Pastel, Monochrome Luxe)
+- Token scales (50–900) and exports for Figma JSON / CSS-in-JS
