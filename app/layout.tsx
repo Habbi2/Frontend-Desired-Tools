@@ -4,17 +4,9 @@ import type { Metadata } from 'next';
 import React from 'react';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL || 'https://frontend-tools.site'),
   title: 'Frontend Desired Tools',
-  description: 'Central hub for your frontend & security tooling projects.',
-  openGraph: {
-    title: 'Frontend Desired Tools',
-    description: 'Central hub for your frontend & security tooling projects.',
-    images: [{ url: ogImage.src, width: ogImage.width, height: ogImage.height }]
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [ogImage.src]
-  }
+  description: 'Frontend Desired Tools is your hub for curated, easy-to-use frontend and security utilities—from AutoCSP generation to OG image snapshots—designed to accelerate development and enhance quality.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

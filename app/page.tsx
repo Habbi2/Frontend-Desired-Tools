@@ -10,6 +10,11 @@ export default async function HomePage() {
   const tools = await getAllTools();
   return (
     <div className="space-y-8">
+      {/* Page header for SEO */}
+      <header>
+        <h1 className="text-3xl font-bold">Front End Tools</h1>
+        <p className="text-lg text-neutral-500">Simple tools for improving your ideas</p>
+      </header>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {tools.map((t: ToolMeta) => {
           const statusTone = t.status === 'stable' ? 'success' : t.status === 'beta' ? 'warn' : 'info';
