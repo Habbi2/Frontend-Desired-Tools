@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     title: 'Frontend Desired Tools',
     description: 'A hub for frontend and security tooling projects, offering simple tools to enhance your web development experience.',
     images: [ogImage.src]
+  },
+  verification: {
+    google: 'PrcdcE0AX6G33ywFSFNjLd6CUgeYlZM2p1cyfTt7h9Q'
   }
 };
 
