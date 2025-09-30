@@ -1,13 +1,36 @@
-<p align="center">
-	<strong>Frontend Desired Tools Portal</strong><br/>
-	Curated micro devtools: security · UX · performance – fast to open, zero onboarding.
-</p>
+<!-- shields.io badges -->
+![Stars](https://img.shields.io/github/stars/Habbi2/Frontend-Desired-Tools?style=social)
+![npm](https://img.shields.io/npm/v/@desired-tools/core?color=blue)
+![build](https://github.com/Habbi2/Frontend-Desired-Tools/actions/workflows/ci.yml/badge.svg)
+![license](https://img.shields.io/github/license/Habbi2/Frontend-Desired-Tools)
 
-> Live: https://frontend-desired-tools.vercel.app
+# Frontend-Desired-Tools  
+Tiny, purposeful utilities for **security hardening** and **performance insight** in everyday frontend workflows.
 
-![Stars](https://img.shields.io/github/stars/Habbi2/Frontend-Desired-Tools?style=flat-square) ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square) ![Status](https://img.shields.io/badge/OG-images-planned-yellow?style=flat-square)
+## ⏱️ Quick-start (30 seconds)
 
-The portal showcases a curated set of small, sharp frontend / web performance & security utilities. Each tool entry is authored in MDX with structured frontmatter and rendered through a searchable, filterable UI.
+```bash
+# 1. Install the toolkit (tree-shakeable ESM)
+npm install --save-dev @desired-tools/core
+
+# 2. Run the CLI in your project root
+npx desired-tools audit
+
+# 3. See the HTML report 📈
+open .desired-tools/report.html
+```
+
+<details>
+<summary>What you get</summary>
+
+| Utility | Purpose | Time saved |
+|---------|---------|------------|
+| `csp-wizard` | Generates strict Content-Security-Policy header | ~30 min |
+| `perf-snap`  | Automates Lighthouse snapshots in CI           | ~15 min |
+| `xss-guard`  | Scans templates for dangerous injections       | ~10 min |
+</details>
+
+> **Note**: This repo houses the source; each tool is also published to npm for zero-config use in any project.
 
 ## Features
 - MDX powered content with typed meta frontmatter
