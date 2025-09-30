@@ -1,7 +1,7 @@
 <!-- shields.io badges -->
 ![Stars](https://img.shields.io/github/stars/Habbi2/Frontend-Desired-Tools?style=social)
-![npm](https://img.shields.io/npm/v/@desired-tools/core?color=blue)
-![build](https://github.com/Habbi2/Frontend-Desired-Tools/actions/workflows/ci.yml/badge.svg)
+![npm](https://img.shields.io/npm/v/tools-portal?color=blue)          <!-- correct package name -->
+![build](https://github.com/Habbi2/Frontend-Desired-Tools/actions/workflows/ci.yml/badge.svg?branch=main)
 ![license](https://img.shields.io/github/license/Habbi2/Frontend-Desired-Tools)
 
 # Frontend-Desired-Tools  
