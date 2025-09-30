@@ -30,8 +30,6 @@ open .desired-tools/report.html
 | `xss-guard`  | Scans templates for dangerous injections       | ~10 min |
 </details>
 
-> **Note**: This repo houses the source; each tool is also published to npm for zero-config use in any project.
-
 ## Features
 - MDX powered content with typed meta frontmatter
 - Search + category + status quick filters
